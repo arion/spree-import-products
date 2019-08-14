@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+### TODO
+
+* If you wish to upgrade ruby version from 2.4.3 to 2.6.3 then use this solution: https://github.com/spree/spree_auth_devise/issues/408

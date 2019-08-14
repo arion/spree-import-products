@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204122814) do
+ActiveRecord::Schema.define(version: 20190814073730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20171204122814) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "products_imports", force: :cascade do |t|
+    t.string "file"
+    t.integer "created", default: 0, null: false
+    t.integer "updated", default: 0, null: false
+    t.integer "failed", default: 0, null: false
+    t.string "state", default: "init", null: false
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.string "factory_class", default: "Simple", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_imports_on_user_id"
   end
 
   create_table "spree_addresses", id: :serial, force: :cascade do |t|

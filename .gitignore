@@ -13,8 +13,10 @@
 /public/spree/*
 !/log/.keep
 !/tmp/.keep
+public/products_imports
 
 /node_modules
 /yarn-error.log
 
 .byebug_history
+.idea

@@ -1,0 +1,31 @@
+<%= button_link_to 'Import', '#', { class: "btn-success", icon: 'add', id: 'import-csv-button', data: { toggle: 'modal', target: '#import-csv-modal' }} %>
+
+<div id='import-csv-modal' class='modal' aria-labelledby='import-csv-modal' role='dialog'>
+  <div class='modal-dialog' role='document'>
+    <%= form_for ProductsImport.new, url: admin_products_imports_path, html: { multipart: true } do |form| %>
+      <div class='modal-content text-left'>
+        <div class='modal-header'>
+          <h4 class='modal-title'>
+            Import products from CSV
+          </h4>
+        </div>
+        <div class='modal-body'>
+          <div class='modal-body'>
+            <div class="form-group field">
+              <%= form.label :field %>
+              <%= form.file_field :file, accept: '.csv', required: true %>
+            </div>
+            <div class="form-group field">
+              <%= form.label :factory_class, 'Type' %>
+              <%= form.select :factory_class, ['Simple'], {}, { class: 'form-control' }  %>
+            </div>
+          </div>
+        </div>
+        <div class='modal-footer'>
+            <%= form.submit 'Import', class: 'btn btn-lg btn-primary' %>
+          <button class='btn btn-lg btn-default', data-dismiss='modal'> Close </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

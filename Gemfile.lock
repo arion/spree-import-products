@@ -71,6 +71,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -82,6 +83,7 @@ GEM
     crass (1.0.3)
     css_parser (1.6.0)
       addressable
+    database_cleaner (1.7.0)
     deface (1.3.0)
       nokogiri (~> 1.6)
       polyglot
@@ -95,8 +97,14 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
+    diff-lcs (1.3)
     erubi (1.7.0)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     ffaker (2.7.0)
     ffi (1.9.18)
     friendly_id (5.2.3)
@@ -128,6 +136,10 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -173,6 +185,9 @@ GEM
     premailer-rails (1.10.1)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.1)
     puma (3.11.0)
     rabl (0.13.1)
@@ -217,6 +232,23 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec-core (3.8.2)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.2)
     ruby_dep (1.5.0)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
@@ -340,11 +372,18 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  database_cleaner
+  factory_girl_rails
+  ffaker
   jbuilder (~> 2.5)
+  letter_opener
   listen (>= 3.0.5, < 3.2)
+  paperclip
   pg (~> 0.18)
+  pry
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rspec-rails
   sass-rails (~> 5.0)
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
@@ -354,4 +393,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   2.0.2
